@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire de contact</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+
+      <header class="form-header">
+        <div class="header-line"></div>
+        <h1>Nous contacter</h1>
+        <p class="subtitle">Remplissez le formulaire ci-dessous — nous vous répondrons rapidement.</p>
+      </header>
+
+      <main>
+        <form action="#" method="post" novalidate>
+
+          <!-- Pseudo -->
+          <div class="field-group">
+            <label for="pseudo">Pseudo <span class="required" aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="pseudo"
+              name="pseudo"
+              placeholder="Votre pseudo"
+              required
+              aria-required="true"
+              autocomplete="username"
+            />
+          </div>
+
+          <!-- Mot de passe -->
+          <div class="field-group">
+            <label for="password">Mot de passe <span class="required" aria-hidden="true">*</span></label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Votre mot de passe"
+                required
+                aria-required="true"
+                autocomplete="current-password"
+              />
+              <button type="button" class="toggle-pwd" aria-label="Afficher / masquer le mot de passe" onclick="togglePassword()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="field-group">
+            <label for="email">Adresse e-mail <span class="required" aria-hidden="true">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="exemple@domaine.fr"
+              required
+              aria-required="true"
+              autocomplete="email"
+            />
+          </div>
+
+          <!-- Objet du message -->
+          <div class="field-group">
+            <label for="objet">Objet du message <span class="required" aria-hidden="true">*</span></label>
+            <div class="select-wrapper">
+              <select id="objet" name="objet" required aria-required="true">
+                <option value="" disabled selected>-- Choisissez un objet --</option>
+                <option value="question">J'ai une question</option>
+                <option value="suggestion">Je fais une suggestion</option>
+                <option value="probleme">Je rencontre un problème</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="field-group">
+            <label for="message">Votre message <span class="required" aria-hidden="true">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Écrivez votre message ici..."
+              required
+              aria-required="true"
+            ></textarea>
+          </div>
+
+          <!-- Niveau d'urgence -->
+          <fieldset class="field-group urgency-group">
+            <legend>Niveau d'urgence <span class="required" aria-hidden="true">*</span></legend>
+
+            <div class="radio-row">
+              <label class="radio-label">
+                <input type="radio" name="urgence" value="lent" checked />
+                <span class="radio-custom"></span>
+                Lent
+              </label>
+
+              <label class="radio-label">
+                <input type="radio" name="urgence" value="normal" />
+                <span class="radio-custom"></span>
+                Normal
+              </label>
+
+              <label class="radio-label">
+                <input type="radio" name="urgence" value="urgent" />
+                <span class="radio-custom"></span>
+                Urgent
+              </label>
+
+              <label class="radio-label">
+                <input type="radio" name="urgence" value="critique" />
+                <span class="radio-custom"></span>
+                Critique
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Politique de confidentialité -->
+          <div class="field-group checkbox-group">
+            <label class="checkbox-label">
+              <input
+                type="checkbox"
+                id="privacy"
+                name="privacy"
+                required
+                aria-required="true"
+              />
+              <span class="checkbox-custom" aria-hidden="true"></span>
+              J'ai lu et j'accepte la
+              <a href="#" class="privacy-link">politique de confidentialité</a>
+              <span class="required" aria-hidden="true"> *</span>
+            </label>
+          </div>
+
+          <!-- Note champs obligatoires -->
+          <p class="required-note"><span class="required">*</span> Champs obligatoires</p>
+
+          <!-- Bouton envoi -->
+          <div class="form-actions">
+            <button type="reset" class="btn btn-reset">Réinitialiser</button>
+            <button type="submit" class="btn btn-submit">Envoyer le message</button>
+          </div>
+
+        </form>
+      </main>
+
+      <footer class="form-footer">
+        <p>R209 — Travaux Pratiques HTML &amp; CSS · Christophe Vallot</p>
+      </footer>
+
+    </div>
+
+    <script>
+      function togglePassword() {
+        const input = document.getElementById('password');
+        input.type = input.type === 'password' ? 'text' : 'password';
+      }
+    </script>
+  </body>
+</html>
